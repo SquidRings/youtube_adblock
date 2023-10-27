@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "No ADS - YouTube",
+    "version": "1.0",
+    "description": "Skips all YouTube ads",
+    "permissions": ["activeTab"],
+    "host_permissions": [
+      "https://www.youtube.com/*",
+      "https://m.youtube.com/*"
+    ],
+    "icons": {
+      "48": "icon.png"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      },
+      "default_title": "No ADS - YouTube"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+}
+  
